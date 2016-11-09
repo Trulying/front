@@ -1,3 +1,5 @@
+/* reset*/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,16 +48,38 @@ html, body {
     height: 100%;
 }
 
+
+/*-------------------------------------------*/
+
+body {
+    background-image: url("tiger.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
     text-align: center;
 }
 
-h1, section, a, footer {
+h1, section, a, footer, p {
     font-family: "Lato", sans-serif;
 }
 
 
+* {
+    box-sizing: border-box;
+}
 
+
+section {
+    position: relative;
+    float: left;
+}
 
 
 #header {
@@ -72,24 +96,28 @@ h1, section, a, footer {
 
 #header #header-content {
     margin: 10px;
+    display: block;
 }
 
-.parallax {
-    height: 100%;
-    background-image: url("tiger.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+
+h1 {
+    position: relative;
+    display: inline-block;
+    color: black;
+    opacity: 0.7;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0px;
 }
 
 a {
     text-decoration: none;
     position: relative;
-    color: white;
+    color: black;
     font-size: 20px;
     font-weight: 600;
     margin-right: 15px;
+    opacity: 0.5;
 }
 
 a:after {
@@ -98,7 +126,7 @@ a:after {
     bottom: 0;
     left: 0;
     width: 0%;
-    border-bottom: 2px solid #FFFFFF;
+    border-bottom: 2px solid black;
     transition: 0.8s;
 }
 
@@ -107,84 +135,37 @@ a:hover:after{
 }
 
 .title-box {
-    display: inline;
+    display: inline-block;
     background-color: rgba(0, 100, 255, 0);
     position: relative;
-    top: 10px;
-    left: 25%;
-    border: 5px solid white;
-    width: 0;
-    padding-top: 1px;
-    padding-right: 4px;
-    padding-bottom: 2px;
-    padding-left: 4px;
+    border: 5px solid black;
+    opacity: 0.6;
     margin: 10px;
+    margin-bottom: 40px;
 }
 
-h1 {
-    position: absolute;
-    color: white;
-    font-size: 36px;
-    font-weight: bold;
-    margin: 5px;
-}
 
-.col-2-3 {
-    width: 66.66%;
-}
-
-.col-1-3 {
-    width: 33.33%;
-}
-
-.col-1-3, .col-2-3 {
-    display: inline-block;
-    vertical-align: top;
-}
-
-section {
-    position: relative;
+[class*="col-"] {
     float: left;
-    margin: 0 10%;
-    width: 63%;
-    top: 25%;
+    padding: 15px;
+    border: 2px solid red;
 }
 
-.scroll-down {
-    position: absolute;
-    margin: auto;
-    top: 100%;
-    right: 0%;
-    bottom: 10%;
-    left: 40%;
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
 
-    width: 40%;
-    height: 30%;
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
 }
-
-.mouse {
-    width: 3px;
-    padding: 10px 15px;
-    height: 30px;
-    border: 2px solid black;
-    border-radius: 25px;
-    opacity: 0.7;
-}
-
-.scroller {
-    width: 3px;
-    height: 10px;
-    border-radius: 25%;
-    background-color: black;
-    animation-name: scroll;
-    animation-duration: 1.5s;
-    animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
-    animation-iteration-count: infinite;
-}
-
-@keyframes scroll {
-    0% { opacity: 0; }
-    10% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(5px); opacity: 0;}
-}
-
